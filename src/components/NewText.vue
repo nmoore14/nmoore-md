@@ -66,7 +66,11 @@ export default {
         { text: 'Heading 3 (h3)', value: 3 },
         { text: 'Heading 4 (h4)', value: 4 },
         { text: 'Heading 5 (h5)', value: 5 },
-        { text: 'Heading 6 (h6)', value: 6 }
+        { text: 'Heading 6 (h6)', value: 6 },
+        { text: 'Italics (em)', value: 7 },
+        { text: 'Bold (strong)', value: 8 },
+        { text: 'Bold and Italic (strong, em)', value: 9},
+        { text: 'Strikethrough (s)', value: 10 }
       ],
       myText: '',
       myHTML: '',
@@ -81,7 +85,11 @@ export default {
         { open: '<h3>', close: '</h3>' },
         { open: '<h4>', close: '</h4>' },
         { open: '<h5>', close: '</h5>' },
-        { open: '<h6>', close: '</h6>' }
+        { open: '<h6>', close: '</h6>' },
+        { open: '<em>', close: '</em>'},
+        { open: '<strong>', close: '</strong>'},
+        { open: '<strong><em>', close: '</em></strong>'},
+        { open: '<s>', close: '</s>'}
       ],
       mdTags: [
         { open: '', close: '' },
@@ -90,7 +98,11 @@ export default {
         { open: '###', close: '' },
         { open: '####', close: '' },
         { open: '#####', close: '' },
-        { open: '######', close: '' }
+        { open: '######', close: '' },
+        { open: '_', close: '_'},
+        { open: '**', close: '**'},
+        { open: '**_', close: '_**'},
+        { open: '~~', close: '~~'}
       ],
       usedHTML: [],
       usedMD: []
