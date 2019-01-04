@@ -1,7 +1,7 @@
 <template>
   <div
     id="nav"
-    class="w-full bg-my-navy-1 h-12 font-sans font-thin text-my-teal-1 text-2xl pl-4 pr-4 pt-2 shadow-md"
+    class="w-full bg-my-navy-1 h-12 font-sans font-thin text-my-teal-1 text-2xl pl-4 pr-4 pt-2 shadow-md fixed"
   >
     <router-link to="/" class="text-my-teal-1 no-underline hover:font-normal">&lt;Home&gt;&nbsp;</router-link>
     <router-link
