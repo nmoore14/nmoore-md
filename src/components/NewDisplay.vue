@@ -40,7 +40,7 @@ export default {
       }
     },
     formatted: function () {
-      if (formatted) {
+      if (this.formatted) {
 
       } else {
 
