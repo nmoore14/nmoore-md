@@ -69,7 +69,7 @@ export default {
         { text: 'Heading 6 (h6)', value: 6 },
         { text: 'Italics (em)', value: 7 },
         { text: 'Bold (strong)', value: 8 },
-        { text: 'Bold and Italic (strong, em)', value: 9},
+        { text: 'Bold and Italic (strong, em)', value: 9 },
         { text: 'Strikethrough (s)', value: 10 }
       ],
       myText: '',
@@ -86,10 +86,10 @@ export default {
         { open: '<h4>', close: '</h4>' },
         { open: '<h5>', close: '</h5>' },
         { open: '<h6>', close: '</h6>' },
-        { open: '<em>', close: '</em>'},
-        { open: '<strong>', close: '</strong>'},
-        { open: '<strong><em>', close: '</em></strong>'},
-        { open: '<s>', close: '</s>'}
+        { open: '<em>', close: '</em>' },
+        { open: '<strong>', close: '</strong>' },
+        { open: '<strong><em>', close: '</em></strong>' },
+        { open: '<s>', close: '</s>' }
       ],
       mdTags: [
         { open: '', close: '' },
@@ -99,10 +99,10 @@ export default {
         { open: '####', close: '' },
         { open: '#####', close: '' },
         { open: '######', close: '' },
-        { open: '_', close: '_'},
-        { open: '**', close: '**'},
-        { open: '**_', close: '_**'},
-        { open: '~~', close: '~~'}
+        { open: '_', close: '_' },
+        { open: '**', close: '**' },
+        { open: '**_', close: '_**' },
+        { open: '~~', close: '~~' }
       ],
       usedHTML: [],
       usedMD: []
@@ -136,7 +136,6 @@ export default {
         this.GET_USER_HTML(this.usedHTML)
         this.GET_USER_MD(this.usedMD)
       }
-      console.log(this.usedHTML)
     },
     addBreak (text) {
       this.myText = `${text}\\r`
