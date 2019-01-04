@@ -1,7 +1,7 @@
 <template>
   <div id="main-new-display" class="flex w-full bg-grey-light rounded-lg">
-    <div v-for='(html, index) in userHTML' :key='index'>
-      <span v-html="html"></span>
+    <div>
+      <span v-for='(html, index) in userHTML' :key='index' v-html="html"></span>
     </div>
   </div>
 </template>

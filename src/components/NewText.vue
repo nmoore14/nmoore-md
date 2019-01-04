@@ -119,7 +119,7 @@ export default {
     },
     addText (textHTML, textMD) {
       if (textHTML !== '' && textMD !== '') {
-        this.usedHTML.push(this.myHTML)
+        this.usedHTML.push(this.myHTML + '\r')
         this.usedMD.push(this.myMD)
         this.GET_USER_HTML(this.usedHTML)
         this.GET_USER_MD(this.usedMD)
@@ -152,6 +152,9 @@ export default {
         this.mdTags[this.mdSelected.value].open,
         this.mdTags[this.mdSelected.value].close
       )
+    },
+    myHTML: function () {
+      this.myHTML = this.myHTML.replace(/(?:\r\n|\r|\n)/g, '<br>')
     }
   }
 }
