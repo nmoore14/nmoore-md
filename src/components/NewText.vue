@@ -32,7 +32,8 @@
         class='bg-grey-lightest font-sans font-light w-full p-4 mt-2 rounded overflow-scroll'
         placeholder='Enter your text here'
         v-model='myText'
-        @keypress.shift.enter="addText(myHTML, myMD)"
+        @keypress.enter='addBreak(myHTML)'
+        @keypress.shift.enter='addText(myHTML, myMD)'
       ></textarea>
     </div>
     <div class='flex-1 w-full h-48 overflow-scroll p-4 mt-2 bg-grey-lightest rounded'>
@@ -47,7 +48,7 @@
       <button
         class='w-full bg-my-teal-1 hover:bg-my-teal-2 hover:text-white text-my-navy-1 font-thin text-2xl py-2 px-4 rounded shadow'
         @click="addText(myHTML, myMD)"
-      >Add</button>
+      >Add <small>(Shift + Enter)</small></button>
     </div>
   </div>
 </template>
@@ -108,7 +109,6 @@ export default {
         this.myHTML = `${open} ${text} ${close}`
         this.displayMDSample(text, open, close)
       }
-      console.log(this.myHTML)
     },
     displayMDSample (text, open, close) {
       if (this.mdSelected.value <= 6) {
@@ -125,6 +125,13 @@ export default {
         this.GET_USER_MD(this.usedMD)
       }
       console.log(this.usedHTML)
+    },
+    addBreak (text) {
+      this.myText = `${text}\\r`
+      this.addBreakMD(text)
+    },
+    addBreakMD (text) {
+
     }
   },
   watch: {
