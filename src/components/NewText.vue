@@ -32,6 +32,7 @@
         class='bg-grey-lightest font-sans font-light w-full p-4 mt-2 rounded overflow-scroll'
         placeholder='Enter your text here'
         v-model='myText'
+        @keypress.shift.enter="addText(myHTML, myMD)"
       ></textarea>
     </div>
     <div class='flex-1 w-full h-48 overflow-scroll p-4 mt-2 bg-grey-lightest rounded'>
