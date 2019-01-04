@@ -45,12 +45,15 @@
     <div class='flex-1 w-full h-16 p-4'>
       <button
         class='w-full bg-my-teal-1 hover:bg-my-teal-2 hover:text-white text-my-navy-1 font-thin text-2xl py-2 px-4 rounded shadow'
+        @click="addText(myHTML, myMD)"
       >Add</button>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+
 export default {
   data () {
     return {
@@ -70,13 +73,13 @@ export default {
       closeTag: '',
       mdSelected: {},
       myTags: [
-        { open: '<P>', close: '</P>' },
-        { open: '<H1>', close: '</H1>' },
-        { open: '<H2>', close: '</H2>' },
-        { open: '<H3>', close: '</H3>' },
-        { open: '<H4>', close: '</H4>' },
-        { open: '<H5>', close: '</H5>' },
-        { open: '<H6>', close: '</H6>' }
+        { open: '<p>', close: '</p>' },
+        { open: '<h1>', close: '</h1>' },
+        { open: '<h2>', close: '</h2>' },
+        { open: '<h3>', close: '</h3>' },
+        { open: '<h4>', close: '</h4>' },
+        { open: '<h5>', close: '</h5>' },
+        { open: '<h6>', close: '</h6>' }
       ],
       mdTags: [
         { open: '', close: '' },
@@ -86,18 +89,25 @@ export default {
         { open: '####', close: '' },
         { open: '#####', close: '' },
         { open: '######', close: '' }
-      ]
+      ],
+      usedHTML: [],
+      usedMD: []
     }
   },
+  computed: {
+    ...mapState(['userHTML', 'userMD'])
+  },
   methods: {
+    ...mapMutations(['GET_USER_HTML', 'GET_USER_MD']),
     enteredText (text, open, close) {
       if (open === '' && close === '') {
-        this.myHTML = `<P> ${text} </P>`
+        this.myHTML = `<p> ${text} </p>`
         this.displayMDSample(text, open, close)
       } else {
         this.myHTML = `${open} ${text} ${close}`
         this.displayMDSample(text, open, close)
       }
+      console.log(this.myHTML)
     },
     displayMDSample (text, open, close) {
       if (this.mdSelected.value <= 6) {
@@ -105,6 +115,15 @@ export default {
       } else {
         this.myMD = `${open}${text}${close}`
       }
+    },
+    addText (textHTML, textMD) {
+      if (textHTML !== '' && textMD !== '') {
+        this.usedHTML.push(this.myHTML)
+        this.usedMD.push(this.myMD)
+        this.GET_USER_HTML(this.usedHTML)
+        this.GET_USER_MD(this.usedMD)
+      }
+      console.log(this.usedHTML)
     }
   },
   watch: {
@@ -115,7 +134,7 @@ export default {
       this.displayMDSample(
         this.myText,
         this.mdTags[this.mdSelected.value].open,
-        (this.closeTag = this.mdTags[this.mdSelected.value].close)
+        this.mdTags[this.mdSelected.value].close
       )
     },
     myText: function () {
@@ -123,7 +142,7 @@ export default {
       this.displayMDSample(
         this.myText,
         this.mdTags[this.mdSelected.value].open,
-        (this.closeTag = this.mdTags[this.mdSelected.value].close)
+        this.mdTags[this.mdSelected.value].close
       )
     }
   }
