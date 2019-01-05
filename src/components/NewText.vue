@@ -36,11 +36,11 @@
         @keypress.shift.enter='addText(myHTML, myMD)'
       ></textarea>
     </div>
-    <div class='flex-1 w-full h-48 overflow-scroll p-4 mt-2 bg-grey-lightest rounded'>
+    <div class='flex-1 w-full h-40 overflow-scroll p-4 mt-2 bg-grey-lightest rounded'>
       <h4 class='w-full text-center font-sans font-thin text-my-navy-1 text-2xl'>Text sample</h4>
       <span v-html='myHTML'></span>
     </div>
-    <div class='flex-1 w-full h-48 overflow-scroll p-4 mt-2 bg-grey-lightest rounded'>
+    <div class='flex-1 w-full h-40 overflow-scroll p-4 mt-2 bg-grey-lightest rounded'>
       <h4 class='w-full text-center font-sans font-thin text-my-navy-1 text-2xl'>Markdown code</h4>
       <p>{{ myMD }}</p>
     </div>
