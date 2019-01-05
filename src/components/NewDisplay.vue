@@ -14,12 +14,12 @@
       <div class='inline-flex w-1/3'></div>
     </div>
     <template v-if='isFormatted'>
-      <div class='flex-1 h-188 m-1 p-4 bg-grey-lightest overflow-scroll rounded-lg'>
+      <div class='relative flex-1 h-nearly m-1 p-4 bg-grey-lightest overflow-scroll rounded-lg'>
         <span v-for='(html, index) in userHTML' :key='index' v-html='html'></span>
       </div>
     </template>
     <template v-else>
-      <div class='flex-1 h-188 m-1 p-4 bg-grey-lightest overflow-scroll rounded-lg'>
+      <div class='relative flex-1 h-nearly m-1 p-4 bg-grey-lightest overflow-scroll rounded-lg'>
         <code class='font-mono'>
           <span v-for='(md, index) in userMD' :key='index' class='w-full'>{{ md }}<br></span>
         </code>
