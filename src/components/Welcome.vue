@@ -4,7 +4,7 @@
       <div class='flex-1 w-screen h-100 bg-blue mt-12' id='welcome-banner'>
         <div class='w-full h-full m-0'>
           <p class="w-full h-16 text-center text-white font-sans font-thin -mb-16 pt-2">
-            NMDesign
+            NMDesign | 2019 | VueJS - TailwindCSS
           </p>
           <h1 class='w-full h-full font-sans font-mono text-center pt-16 mt-o' id='welcome-overlay'>Welcome</h1>
         </div>
